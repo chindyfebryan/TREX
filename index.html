@@ -4,7 +4,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">        
         <title>TREX - TRack EXpenses</title>
         <link rel = "stylesheet" href="style.css"/>
-        <link rel="shortcut icon" href="logo.png">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel = "shortcut icon" href="logo.png">
         <script type="text/javascript" src="app.js"></script>
     </head>
     <body onload="load()">
@@ -14,10 +15,23 @@
                     <img class="logo" src="logo.png" alt="logo" id="logo" >
                     <img class="textlogo" src="text-logo.png" alt="text logo">
                 </div>
-                <div class="header-right">
-                    <a href = "#about">About</a>
-                    <a href = "#table">History</a>
+                <div class="header-right" id="nav">
+                    <a href="javascript:void(0);" class="icon" onclick="navFunction()">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                    <a href = "#about" >About</a>
+                    <a href = "#tableData">History</a>
                 </div>
+                <script>
+                    function navFunction() {
+                      var x = document.getElementById("nav");
+                      if (x.className === "header-right") {
+                        x.className += " responsive";
+                      } else {
+                        x.className = "header-right";
+                      }
+                    }
+                </script>
             </div>
         </header>
         <div class="top-wrapper">
@@ -36,7 +50,7 @@
                         <option value="other">Other</option>
                     </select><br><br>
                     <label>Jumlah (Rp):</label><br>
-                    <input type="number" id="amount"><br><br>
+                    <input type="number" id="amount" placeholder="50000"><br><br>
                     <input type="button" id="add" value="Tambahkan" onclick="Javascript:addRow()">
                 </div>                
               </div>

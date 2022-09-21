@@ -117,6 +117,7 @@ table tr:hover{
 }
 
 #about p{
+    font-size: 20px;
     text-align: justify;
     padding: 30px;    
 }
@@ -128,6 +129,58 @@ footer {
 	text-align: center;
 	font-weight: bold;
 }
+
+/* @media screen and (max-width: 720px){
+    .header-right{
+        font-size: 70%;
+    }
+    #about p{
+        font-size: 90%;
+    }
+} */
+
+.header-right {
+    overflow: hidden;
+  }
+
+  
+  .header-right a.active {
+    background-color: black;
+    color: white;
+  }
+  
+  .header-right .icon {
+    display: none;
+  }
+  
+  @media screen and (max-width: 1000px) {
+    .header-right a:not(:first-child) {display: none;}
+    .header-right a.icon {
+      float: right;
+      display: block;
+    }
+  }
+  
+  @media screen and (max-width: 1000px) {
+      .header-right .icon {
+    display: none;
+  }
+    .header-right.responsive {position: relative;}
+    .header-right.responsive .icon {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    
+    .header-right.responsive a {
+      padding-right: 10px;
+      background-color: rgba(34, 49, 52, 0.9);;
+      float: none;
+      display: block;
+      text-align: left;
+    }
+  }
+
 /* #grad {
     background-color: linear-gradient(to right, red, yellow);
 } */
