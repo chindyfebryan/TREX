@@ -31,7 +31,7 @@ header {
 }
 
 .container {
-    width: 1170px;
+    /* width: 1170px; */
     padding: 0 15px;
     margin: 0 auto;
 }
@@ -72,11 +72,14 @@ header {
 }
 
 #about{
+    padding: 100px 0 100px 0;
     text-align: center;
+    margin: 0 auto;
 }
 
 #about p{
     text-align: justify;
+    
 }
 /* #grad {
     background-color: linear-gradient(to right, red, yellow);
