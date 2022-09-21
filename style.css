@@ -1,0 +1,112 @@
+body{
+    margin: 0;
+    background-color: white;
+    font-family: 'Segoe UI';
+}
+
+a {
+    text-decoration: none;
+}
+
+header {
+    height: 65px;
+    width: 100%;
+    background-color: rgba(34, 49, 52, 0.9);
+    /* Ubah position ke fixed, dan top ke 0 */
+    position: fixed;top: 0;
+    /* Ubah z-index ke 10 */
+    z-index: 10
+}
+
+.logo {
+    width: 100px;
+    margin-top: 5px;
+}
+  
+.container {
+    width: 1170px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+.header-left {
+    float: left;
+}
+
+.header-right {
+    float: right;
+    background-color: rgba(255, 255, 255, 0.3);
+    transition: all 0.5s;
+}
+
+.header-right:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+  
+.header-right a {
+    line-height: 65px;
+    padding: 0 25px;
+    color: white;
+    display: block;
+}
+
+.top-wrapper {
+  padding: 180px 0 100px 0;
+  background-image: url(https://resilientblog.co/wp-content/uploads/2019/07/sky-quotes-1024x614.jpg.webp);
+  background-size: cover;
+  color: black;
+  text-align: center;
+}
+
+/* #grad {
+    background-color: linear-gradient(to right, red, yellow);
+} */
+/* .wrapper{
+    width: 100%;
+    margin: auto;
+    display: flex;
+    line-height: 80px;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+} */
+
+/* .logo a{
+    font-size : 50px;
+    font-weight : bold;
+    float : left;
+    font-family : 'Times New Roman';
+    color:cornflowerblue;
+} */
+
+/* .menu{
+    float : right;
+}
+
+.wrapper {
+    background-color: skyblue;
+}
+
+.wrapper ul{
+    list-style-type: none;
+    margin: 0;
+    padding : 0;
+    overflow: hidden;
+}
+.wrapper ul li{
+        display: block;
+        font-size: 1.5rem;
+        list-style-type:none ;
+        padding: 1em;
+        float : left;
+}
+.wrapper ul li a{
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    padding: 0px 16px 0px 16px;
+    text-decoration: none;
+}
+.wrapper ul li a:hover{
+    text-decoration: underline;
+} */
