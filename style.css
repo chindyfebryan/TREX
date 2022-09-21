@@ -11,11 +11,13 @@ a {
 }
 
 header {
+    display: inline;
     height: 65px;
     width: 100%;
     background-color: rgba(34, 49, 52, 0.9);
     /* Ubah position ke fixed, dan top ke 0 */
-    position: fixed;top: 0;
+    position: fixed;
+    top: 0;
     /* Ubah z-index ke 10 */
     z-index: 10
 }
@@ -32,6 +34,16 @@ header {
 
 }
 
+nav li {
+	display: inline;
+	margin-right: 10px;
+	list-style-type: none;
+}
+
+nav a:hover {
+	font-weight: bolder;
+}
+
 .container {
     /* width: 1170px; */
     padding: 0 15px;
@@ -44,20 +56,25 @@ header {
 }
 
 .header-right {
+	position: sticky;
+	top: 0;
     float: right;
-    background-color: rgba(255, 255, 255, 0.3);
+    /* background-color: rgba(255, 255, 255, 0.3); */
     transition: all 0.5s;
 }
 
-.header-right:hover {
+/* .header-right:hover {
     background-color: rgba(255, 255, 255, 0.5);
-}
+} */
   
 .header-right a {
+    text-decoration: none;
+	font-size: 18px;
+	font-weight: 400px;
     line-height: 65px;
     padding: 0 25px;
     color: white;
-    display: block;
+    /* display: block; */
 }
 
 .top-wrapper {
@@ -73,10 +90,31 @@ header {
 }
 
 label{
- font-weight: bold;
+    font-weight: bold;
+}
+
+input, select{
+    padding: 5px;
+    border: 2px solid rgba(34, 49, 52, 0.9);
+    border-radius: 4px;
+}
+
+input[type=button]{
+    color: white;
+    background-color: rgba(34, 49, 52, 0.9);
+}
+
+input[type=button]:hover{
+    background-color: rgba(75, 86, 102, 0.9);
+}
+
+.table{
+    padding: 50px 0 50px 0;
 }
 
 table{
+    word-wrap: break-word;
+    max-width: 500px;
     border-collapse: collapse;
     background-color: white;
 }
@@ -98,6 +136,14 @@ table tr:hover{
 #about p{
     text-align: justify;
     padding: 30px;    
+}
+
+footer {
+	padding: 10px;
+	color: white;
+    background-color: rgba(34, 49, 52, 0.9);
+	text-align: center;
+	font-weight: bold;
 }
 /* #grad {
     background-color: linear-gradient(to right, red, yellow);
