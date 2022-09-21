@@ -18,26 +18,37 @@
         <div class="top-wrapper">
             <div class="container">
                 <h1>Lacak Pengeluaran Anda Dengan Mudah</h1>
-                <form>
+                <div class="form">
+                    <p>Tambahkan pengeluaran baru</p>
                     <label for="date">Tanggal:</label><br>
                     <input type="date" id="date" name="date"><br><br>
-                    <label for="cat">Pilih kategori:</label><br>
-                    <select name="cat" id="cat">
+                    <label for="category">Kategori:</label><br>
+                    <select name="category" id="category">
                         <option value="food">Food</option>
                         <option value="home">Home</option>
                         <option value="transport">Transport</option>
+                        <option value="urgent">Urgent</option>
                         <option value="other">Other</option>
                     </select><br><br>
                     <label for="amount">Jumlah (Rp):</label><br>
-                    <input type="number" id="amount" name="amount"><br><br>
-                    <input type="submit" value="Submit">
-                </form>
-              </div> -->
+                    <input type="number" id="amount" name="amount" placeholder="100000"><br><br>
+                    <button type="button"  onclick="getValueInput()">Submit</button> 
+                    <script> 
+                        const getValueInput = () =>{
+                            let inputValue = document.getElementById("date").value; 
+                            document.getElementById("dateValue").innerHTML = inputValue; 
+
+                            let inputValue2 = document.getElementById("category").value; 
+                            document.getElementById("categoryValue").innerHTML = inputValue2;
+                            
+                            let inputValue3 = document.getElementById("amount").value; 
+                            document.getElementById("amountValue").innerHTML = inputValue3; 
+                        }
+                    </script>
+                </div>                
+              </div>
             </div>
-          </div>
-        <!-- <section>
-            <h1>halo</h1>
-        </section> -->
+        </div>
             <div class="wrapper">
                 <!-- <div class ="logo"><span><a href = "tugaspraktisi.html">TRack EXpenses</a></div>
                 <div class ="menu">
@@ -49,15 +60,16 @@
             </div>
         <div class="container">
             <table border="1" cellpadding="18">
+            <th>Riwayat pengeluaran</th>
             <tr>
-                <td><b>Pemasukan</b></td>
+                <td><b>Tanggal</b></td>
+                <td><b>Kategori</b></td>
                 <td><b>Pengeluaran</b></td>
-                <td><b>Saldo</b></td>
             </tr>
             <tr>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td><p id="dateValue"></p></td>
+                <td><p id="categoryValue"></p></td>
+                <td><p id="amountValue"></p></td>
             </tr>
             <tr>
                 <td></td>
