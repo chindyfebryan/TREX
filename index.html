@@ -4,12 +4,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">        
         <title>TREX - TRack EXpenses</title>
         <link rel = "stylesheet" href="style.css"/>
+        <script type="text/javascript" src="app.js"></script>
     </head>
-    <body>
+    <body onload="load()">
         <header>
             <div class="container">
                 <div class="header-left">
-                    <img class="logo" src="logo.png" alt="logo">
+                    <img class="logo" src="logo.png" alt="logo" id="logo" >
+                    <img class="textlogo" src="text-logo.png" alt="text logo">
                 </div>
                 <div class="header-right">
                     <a href = "#about">About</a>
@@ -21,31 +23,19 @@
                 <h1>Lacak Pengeluaran Anda Dengan Mudah</h1>
                 <div class="form">
                     <p>Tambahkan pengeluaran baru</p>
-                    <label for="date">Tanggal:</label><br>
-                    <input type="date" id="date" name="date"><br><br>
-                    <label for="category">Kategori:</label><br>
-                    <select name="category" id="category">
+                    <label>Tanggal:</label><br>
+                    <input type="date" id="date"><br><br>
+                    <label>Kategori:</label><br>
+                    <select id="category">
                         <option value="food">Food</option>
                         <option value="home">Home</option>
                         <option value="transport">Transport</option>
                         <option value="urgent">Urgent</option>
                         <option value="other">Other</option>
                     </select><br><br>
-                    <label for="amount">Jumlah (Rp):</label><br>
-                    <input type="number" id="amount" name="amount" placeholder="100000"><br><br>
-                    <button type="button"  onclick="getValueInput()">Submit</button> 
-                    <script> 
-                        const getValueInput = () =>{
-                            let inputValue = document.getElementById("date").value; 
-                            document.getElementById("dateValue").innerHTML = inputValue; 
-
-                            let inputValue2 = document.getElementById("category").value; 
-                            document.getElementById("categoryValue").innerHTML = inputValue2;
-                            
-                            let inputValue3 = document.getElementById("amount").value; 
-                            document.getElementById("amountValue").innerHTML = inputValue3; 
-                        }
-                    </script>
+                    <label>Jumlah (Rp):</label><br>
+                    <input type="number" id="amount">
+                    <input type="button" id="add" value="Add" onclick="Javascript:addRow()">
                 </div>                
               </div>
             </div>
@@ -59,41 +49,17 @@
                 </ul>
                 </div> -->
             </div>
-        <div class="container">
-            <table border="1" cellpadding="18">
-            <th>Riwayat pengeluaran</th>
-            <tr>
-                <td><b>Tanggal</b></td>
-                <td><b>Kategori</b></td>
-                <td><b>Pengeluaran</b></td>
-            </tr>
-            <tr>
-                <td><p id="dateValue"></p></td>
-                <td><p id="categoryValue"></p></td>
-                <td><p id="amountValue"></p></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            
+        <div align="center">
+            <table id="tableData" border="1" cellpadding="2">
+                <th colspan="4">Riwayat pengeluaran</th>
+                <tr>
+                    <td><b>Tanggal</b></td>
+                    <td><b>Kategori</b></td>
+                    <td><b>Pengeluaran</b></td>
+                    <td>&nbsp;</td>
+                </tr>
             </table>
+        </div>
         <div id="about">
             <h1>About</h1> 
             <p>
