@@ -1,87 +1,82 @@
 <!DOCTYPE html>
-<html>
+<html id="home">
     <head>
+        <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">        
         <title>TREX - TRack EXpenses</title>
-        <link rel = "stylesheet" href="style.css"/>
+        <link rel = "stylesheet" href="css/style.css"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel = "shortcut icon" href="logo.png">
-        <script type="text/javascript" src="app.js"></script>
+        <link rel = "shortcut icon" href="img/logo.png">
+        <script type="text/javascript" src="js/app.js"></script>
     </head>
     <body onload="load()">
         <header>
             <div class="container">
                 <div class="header-left">
-                    <img class="logo" src="logo.png" alt="logo" id="logo" >
-                    <img class="textlogo" src="text-logo.png" alt="text logo">
+                    <img class="logo" src="img/logo.png" alt="logo" id="logo">
+                    <a href="#home">
+                        <img class="textlogo" src="img/text-logo.png" alt="text logo">
+                    </a>
                 </div>
                 <div class="header-right" id="nav">
-                    <a href="javascript:void(0);" class="icon" onclick="navFunction()">
+                    <a class="icon" onclick="navFunction()">
                         <i class="fa fa-bars"></i>
                     </a>
                     <a href = "#about" >About</a>
                     <a href = "#tableData">History</a>
                 </div>
-                <script>
-                    function navFunction() {
-                      var x = document.getElementById("nav");
-                      if (x.className === "header-right") {
-                        x.className += " responsive";
-                      } else {
-                        x.className = "header-right";
-                      }
-                    }
-                </script>
             </div>
         </header>
-        <div class="top-wrapper">
-            <div class="container">
-                <h1>Lacak Pengeluaran Anda Dengan Mudah</h1>
-                <div class="form">
-                    <p>Tambahkan pengeluaran baru</p>
-                    <label>Tanggal:</label><br>
-                    <input type="date" id="date"><br><br>
-                    <label>Kategori:</label><br>
-                    <select id="category">
-                        <option value="food">Food</option>
-                        <option value="home">Home</option>
-                        <option value="transport">Transport</option>
-                        <option value="urgent">Urgent</option>
-                        <option value="other">Other</option>
-                    </select><br><br>
-                    <label>Jumlah (Rp):</label><br>
-                    <input type="number" id="amount" placeholder="50000"><br><br>
-                    <input type="button" id="add" value="Tambahkan" onclick="Javascript:addRow()">
-                </div>                
-              </div>
+        <main>
+            <div class="top-wrapper">
+                <div class="container">
+                    <h1>Lacak Pengeluaran Anda Dengan Mudah</h1>
+                    <div class="form">
+                        <p>Tambahkan pengeluaran baru</p>
+                        <label>Tanggal:</label><br>
+                        <input type="date" id="date"><br><br>
+                        <label>Kategori:</label><br>
+                        <select id="category">
+                            <option value="food">Food</option>
+                            <option value="home">Home</option>
+                            <option value="transport">Transport</option>
+                            <option value="urgent">Urgent</option>
+                            <option value="other">Other</option>
+                        </select><br><br>
+                        <label>Jumlah (Rp):</label><br>
+                        <input type="number" id="amount" placeholder="50000"><br><br>
+                        <input type="button" id="add" value="Tambahkan" onclick="Javascript:addRow()">
+                    </div>                
+                </div>
+                </div>
             </div>
-        </div>
             <div class="wrapper">
                 <!-- <div class ="logo"><span><a href = "tugaspraktisi.html">TRack EXpenses</a></div>
                 <div class ="menu">
-                <ul>
-                    <li><a href = "about.html">About</a></li>
-                    <li><a href = "user.html">Sign Up</a></li>
-                </ul>
+                    <ul>
+                        <li><a href = "about.html">About</a></li>
+                        <li><a href = "user.html">Sign Up</a></li>
+                    </ul>
                 </div> -->
             </div>
-        <div align="center" class="table">
-            <table id="tableData" border="1" cellpadding="5">
-                <th colspan="4">Riwayat Pengeluaran</th>
-                <tr>
-                    <th><b>Tanggal</b></th>
-                    <th><b>Kategori</b></th>
-                    <th><b>Pengeluaran</b></th>
-                    <th>&nbsp;</th>
-                </tr>
-            </table>
-        </div>
-        <div id="about">
-            <h1>About</h1> 
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac magna eu nunc gravida aliquet quis at ligula. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nunc sit amet velit felis. Suspendisse non eros porttitor, aliquet augue non, tristique ex. Nullam sed libero facilisis, ultricies orci at, tincidunt nunc. Nulla nibh dolor, malesuada ut elit ac, lacinia ultrices erat. Mauris vitae velit porttitor, placerat felis nec, gravida libero. Fusce mauris nisi, malesuada id diam id, gravida molestie turpis. Nam ligula est, aliquet a molestie at, ullamcorper et mauris. Maecenas vitae fringilla nunc. Quisque vehicula gravida lacus ac congue. Curabitur porta sagittis sapien, id iaculis mauris finibus vitae. Proin sem tortor, sollicitudin vitae sagittis ac, euismod non tortor. Sed quis nisi nec ligula porta varius at vel risus. Mauris laoreet venenatis sem condimentum tempor.
-            </p>
-        </div>
+            <div align="center" class="table">
+                <table id="tableData" border="1" cellpadding="5">
+                    <th colspan="4">Riwayat Pengeluaran</th>
+                    <tr>
+                        <th><b>Tanggal</b></th>
+                        <th><b>Kategori</b></th>
+                        <th><b>Pengeluaran</b></th>
+                        <th>&nbsp;</th>
+                    </tr>
+                </table>
+            </div>
+            <div id="about">
+                <h2>About</h1> 
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac magna eu nunc gravida aliquet quis at ligula. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nunc sit amet velit felis. Suspendisse non eros porttitor, aliquet augue non, tristique ex. Nullam sed libero facilisis, ultricies orci at, tincidunt nunc. Nulla nibh dolor, malesuada ut elit ac, lacinia ultrices erat. Mauris vitae velit porttitor, placerat felis nec, gravida libero. Fusce mauris nisi, malesuada id diam id, gravida molestie turpis. Nam ligula est, aliquet a molestie at, ullamcorper et mauris. Maecenas vitae fringilla nunc. Quisque vehicula gravida lacus ac congue. Curabitur porta sagittis sapien, id iaculis mauris finibus vitae. Proin sem tortor, sollicitudin vitae sagittis ac, euismod non tortor. Sed quis nisi nec ligula porta varius at vel risus. Mauris laoreet venenatis sem condimentum tempor.
+                </p>
+            </div>
+        </main>        
         <footer>
             <p>Michiko, Chindy, Wirya, Stefany &#169; 2022</p>
         </footer>
