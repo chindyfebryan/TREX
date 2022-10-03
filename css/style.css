@@ -15,7 +15,6 @@ a {
 }
 
 header {
-    height: 65px;
     width: 100%;
     background-color: rgba(34, 49, 52, 0.9);
     position: fixed;
@@ -24,38 +23,52 @@ header {
 
 .logo {
     width: 45px;
-    height: 55px;
-    margin-top: 5px;
 }
 
 .textlogo {
     width: 90px;
-    height: 90px;
+    padding-bottom: -20px ;
 }
 
-.container {
+/* .container-fluid {
     padding: 0 15px;
     margin: 0 auto;
+} */
+
+.navbar {
+    background-color: rgba(34, 49, 52, 0.9);
+	position: fixed;
+	top: 0;
+	left: 0;
+	padding: 4px 16px;
+	width: 100%;
+	z-index: 999;
 }
 
-.header-left {
-    float: left;
-    display: flex;
-}
-
-.header-right {
-    float: right;
-}
-
-.header-right a {
-    line-height: 65px;
-    padding: 0 25px;
+.navbar-nav li > a:hover{
     color: white;
-    /* display: block; */
+}
 
-}.header-right a:hover {
-    font-weight: bolder;
-    /* background-color: rgba(255, 255, 255, 0.5); */
+.navbar-nav li > a:hover::after {
+    display: block;
+    content: "";
+    width: 100%;
+    margin-bottom: -5px;
+    border-bottom: 2.5px solid rgb(223, 162, 20);
+    width: 100%;
+    transition: width .3s;
+}
+
+.navbar .navbar-brand {
+	font-size: 1.5em;
+}
+.navbar .nav-item {
+	font-size: 1.1em;
+	padding: 0 5px;
+}
+
+.navbar .collapse.navbar-collapse {
+    justify-content: flex-end;
 }
 
 .top-wrapper {
@@ -90,23 +103,36 @@ input[type=button]:hover{
     background-color: rgba(75, 86, 102, 0.9);
 }
 
+h2{
+    margin-top: 50px;
+}
+
 .table{
-    padding: 50px 0 50px 0;
+    text-align: center;
+    margin: 0 auto;
+    width: 80%;
 }
 
 table{
+    padding: 0 auto;
+    align-self: center;
     border-collapse: collapse;
     background-color: white;
 }
 
-table th{
+table thead{
+    padding: 0 auto;
     background-color: rgba(34, 49, 52, 0.9);
     color: white;
 }
 
-table tr:hover{
+table tbody:hover{
     transition: all 0.5s;
     background-color: #f5f5f5;
+}
+
+table tbody{
+    padding: 0 auto;
 }
 
 #about{

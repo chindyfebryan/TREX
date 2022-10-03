@@ -1,31 +1,46 @@
 <!DOCTYPE html>
 <html id="home">
     <head>
-        <meta charset="utf-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">        
+        <meta charset="utf-8">
+        <meta name="theme-color" content="#8accf1">
+        <meta name="googlebot" content="notranslate">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">     
         <title>TREX - TRack EXpenses</title>
-        <link rel = "stylesheet" href="css/style.css"/>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel = "shortcut icon" href="img/logo.png">
         <script type="text/javascript" src="js/app.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script> 
     </head>
     <body onload="load()">
         <header>
-            <div class="container">
-                <div class="header-left">
-                    <img class="logo" src="img/logo.png" alt="logo" id="logo">
-                    <a href="#home">
-                        <img class="textlogo" src="img/text-logo.png" alt="text logo">
-                    </a>
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <div class="container-fluid">
+                    <div class="container-logo">
+                        <img class="logo" src="img/logo.png" alt="logo" id="logo">
+                        <!-- <a href="#home">
+                            <img class="textlogo" src="img/text-logo.png" alt="text logo">
+                        </a> -->
+                    </div>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav">
+                      <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#tableData">History</a>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
-                <div class="header-right" id="nav">
-                    <a class="icon" onclick="navFunction()">
-                        <i class="fa fa-bars"></i>
-                    </a>
-                    <a href = "#about" >About</a>
-                    <a href = "#tableData">History</a>
-                </div>
-            </div>
+            </nav>
         </header>
         <main>
             <div class="top-wrapper">
@@ -48,7 +63,6 @@
                         <input type="button" id="add" value="Tambahkan" onclick="Javascript:addRow()">
                     </div>                
                 </div>
-                </div>
             </div>
             <div class="wrapper">
                 <!-- <div class ="logo"><span><a href = "tugaspraktisi.html">TRack EXpenses</a></div>
@@ -60,15 +74,24 @@
                 </div> -->
             </div>
             <div align="center" class="table">
-                <table id="tableData" border="1" cellpadding="5">
-                    <th colspan="4">Riwayat Pengeluaran</th>
-                    <tr>
-                        <th><b>Tanggal</b></th>
-                        <th><b>Kategori</b></th>
-                        <th><b>Pengeluaran</b></th>
-                        <th>&nbsp;</th>
-                    </tr>
-                </table>
+              <h2>Riwayat Pengeluaran</h2>
+              <table  class="table table-sm table-responsive-sm table-bordered" id="tableData" border="1" cellpadding="5">
+                <thead>
+                  <tr>
+                    <th scope="col"><b>Tanggal</b></th>
+                    <th scope="col"><b>Kategori</b></th>
+                    <th scope="col"><b>Pengeluaran</b></th>
+                    <th scope="col">&nbsp;</th>
+                    <th scope="col">&nbsp;</th>
+                  </tr>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+
+                  </tr>
+                </tbody>
+              </table>
             </div>
             <div id="about">
                 <h2>About</h1> 
@@ -76,6 +99,7 @@
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac magna eu nunc gravida aliquet quis at ligula. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nunc sit amet velit felis. Suspendisse non eros porttitor, aliquet augue non, tristique ex. Nullam sed libero facilisis, ultricies orci at, tincidunt nunc. Nulla nibh dolor, malesuada ut elit ac, lacinia ultrices erat. Mauris vitae velit porttitor, placerat felis nec, gravida libero. Fusce mauris nisi, malesuada id diam id, gravida molestie turpis. Nam ligula est, aliquet a molestie at, ullamcorper et mauris. Maecenas vitae fringilla nunc. Quisque vehicula gravida lacus ac congue. Curabitur porta sagittis sapien, id iaculis mauris finibus vitae. Proin sem tortor, sollicitudin vitae sagittis ac, euismod non tortor. Sed quis nisi nec ligula porta varius at vel risus. Mauris laoreet venenatis sem condimentum tempor.
                 </p>
             </div>
+            <p id="display"></p>
         </main>        
         <footer>
             <p>Michiko, Chindy, Wirya, Stefany &#169; 2022</p>
