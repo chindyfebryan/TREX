@@ -126,7 +126,7 @@ table thead{
     color: white;
 }
 
-table tbody:hover{
+table tbody tr:hover{
     transition: all 0.5s;
     background-color: #f5f5f5;
 }
