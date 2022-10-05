@@ -107,29 +107,16 @@ h2{
     margin-top: 50px;
 }
 
-.table{
+#history{
     text-align: center;
-    margin: 0 auto;
-    width: 80%;
+    margin: 0 3%;
 }
 
 table{
-    table-layout: fixed;
-    padding: 0 auto;
-    align-self: center;
-    border-collapse: collapse;
     background-color: white;
 }
 
-td, th {
-    max-width: 150px !important;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
-
 table thead{
-    padding: 0 auto;
     background-color: rgba(34, 49, 52, 0.9);
     color: white;
 }
@@ -137,10 +124,6 @@ table thead{
 table tbody tr:hover{
     transition: all 0.5s;
     background-color: #f5f5f5;
-}
-
-table tbody{
-    padding: 0 auto;
 }
 
 #about{
