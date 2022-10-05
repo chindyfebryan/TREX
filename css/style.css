@@ -114,10 +114,18 @@ h2{
 }
 
 table{
+    table-layout: fixed;
     padding: 0 auto;
     align-self: center;
     border-collapse: collapse;
     background-color: white;
+}
+
+td, th {
+    max-width: 150px !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 table thead{
