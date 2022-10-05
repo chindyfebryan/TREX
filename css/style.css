@@ -75,6 +75,8 @@ header {
   padding: 180px 0 100px 0;
   background-image: url(https://img.freepik.com/free-vector/money-pattern-background-wallpaper-vector-finance-illustration_53876-140179.jpg);
   background-size: cover;
+  background-color: rgba(236, 236, 185, 0.178);
+  background-blend-mode: soft-light;
   color: black;
   text-align: center;
 }
@@ -89,22 +91,24 @@ label{
 
 input, select{
     padding: 5px;
-    border: 2px solid rgba(34, 49, 52, 0.9);
+    border: 2px solid rgba(34, 49, 52);
     border-radius: 4px;
 }
 
 input[type=button]{
+    font-weight: bold;
     color: white;
-    background-color: rgba(34, 49, 52, 0.9);
+    background-color: rgb(34, 49, 52);
 }
 
 input[type=button]:hover{
     transition: all 0.5s;
-    background-color: rgba(75, 86, 102, 0.9);
+    background-color: rgb(75, 86, 102);
 }
 
 h2{
     margin-top: 50px;
+    font-size: 1.8em;
 }
 
 #history{
@@ -117,7 +121,7 @@ table{
 }
 
 table thead{
-    background-color: rgba(34, 49, 52, 0.9);
+    background-color: rgb(34, 49, 52);
     color: white;
 }
 
@@ -132,7 +136,7 @@ table tbody tr:hover{
 }
 
 #about p{
-    font-size: 110%;
+    font-size: 120%;
     text-align: justify;
     padding: 30px;    
 }
@@ -140,7 +144,7 @@ table tbody tr:hover{
 footer {
 	padding: 10px;
 	color: white;
-    background-color: rgba(34, 49, 52, 0.9);
+    background-color: rgba(34, 49, 52);
 	text-align: center;
 	font-weight: bold;
 }
@@ -152,41 +156,8 @@ footer {
 @media screen and (max-width: 850px) {
     #about p {
         font-size: 100%;
-    }
-    
-    .header-right a:not(:first-child) {
-        display: none;
-    }
-
-    .header-right a.icon {
-        transition: all 0.5s;
-        float: right;
-        display: block;
-    }
-
-    .header-right .icon {
-        display: none;
-    }
-
-    .header-right.responsive {
-        position: relative;
-    }
-
-    .header-right.responsive .icon {
-        background-color: transparent;
-        right: 0;
-        top: 0;
-    }
-
-    .header-right.responsive a {
-        width: 100%;
-        background-color: rgba(34, 49, 52, 0.9);;
-        float: none;
-        display: block;
-        text-align: left;
-    }
+    }   
 }
-
 /* #grad {
     background-color: linear-gradient(to right, red, yellow);
 } */
