@@ -112,7 +112,7 @@ h2 {
 }
 
 #history{
-  padding: 70px;
+  padding: 70px 20px;
   text-align: center;
   margin: 0 3%;
 }
@@ -132,7 +132,7 @@ table tbody tr:hover{
 }
 
 #about {
-  padding: 70px;
+  padding: 70px 20px;
   text-align: center;
 }
 
