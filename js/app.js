@@ -16,15 +16,15 @@ function addRow() {
   row.insertCell(1).innerHTML= category;
   row.insertCell(2).innerHTML= amount;
   row.insertCell(3).innerHTML= '<input type="button" value = "Delete" onClick="Javacsript:deleteRow(this)">';
-  row.insertCell(4).innerHTML= '<input type="button" value = "Sum" onClick="Javacsript:sum(this)">';
+  var sums = parseInt(document.getElementById("total-value").innerHTML) + parseInt(amount);
+  document.getElementById("total-value").innerHTML = sums;
 }
 
-// function sum(obj) {
-//   var index = obj.parentNode.parentNode.rowIndex;
-// }
-
 function deleteRow(obj) {
-  var index = obj.parentNode.parentNode.rowIndex;
+  var index = obj.parentNode.parentNode.rowIndex-1;
+  var nilai = parseInt(obj.parentNode.parentNode.childNodes[2].innerHTML);
+  var total = parseInt(document.getElementById("total-value").innerHTML);
   var table = document.getElementById("tableData");
+  document.getElementById("total-value").innerHTML = total - nilai;
   table.deleteRow(index);
 }
