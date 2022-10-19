@@ -38,7 +38,7 @@ const addExpense = (ev)=>{
         id: Date.now(),
         date : document.getElementById("date").value,
         category : document.getElementById("category").value,
-         amount : document.getElementById("amount").value
+        amount : document.getElementById("amount").value
     }
     expenses.push(expense);
     document.forms[0].reset(); // to clear the form for the next entries
@@ -51,25 +51,26 @@ const addExpense = (ev)=>{
 
     //saving to localStorage
     localStorage.setItem('MyexpenseList', JSON.stringify(expenses) );
+    
+    //chart
+    var series = JSC.nest()
+      // Group by day
+      .key({ key: "date", pattern: "day" })
+      // Count data entries for each day grouping
+      .rollup(function(v) {
+        return v.length;
+      })
+      .series(expenses);
+    
+    var chart = JSC.chart("chartDiv", {
+      legend_visible: false,
+      toolbar_items_export_visible: false,
+      title_label_text: "Count data rows by day",
+      xAxis_label_text: "Date",
+      yAxis_label_text: "Hits",
+      series: series
+    });
 }
 document.addEventListener('DOMContentLoaded', ()=>{
     document.getElementById('btn').addEventListener('click', addExpense);
-});
-
-var series = JSC.nest()
-  // Group by day
-  .key({ key: "date", pattern: "day" })
-  // Count data entries for each day grouping
-  .rollup(function(v) {
-    return v.length;
-  })
-  .series(expenses);
-
-var chart = JSC.chart("chartDiv", {
-  legend_visible: false,
-  toolbar_items_export_visible: false,
-  title_label_text: "Count data rows by day",
-  xAxis_label_text: "Date",
-  yAxis_label_text: "Hits",
-  series: series
 });
