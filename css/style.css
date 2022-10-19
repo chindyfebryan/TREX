@@ -146,6 +146,7 @@ table tbody tr:hover{
 
 #total {
 	text-align: center;
+  font-size: 20px;
 }
 #about {
   padding: 70px 20px;
