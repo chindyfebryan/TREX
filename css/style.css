@@ -123,6 +123,10 @@ h2 {
   font-size: 1.8em;
   padding-bottom: 20px;    
 }
+.chart{
+  width: 300px;
+  
+}
 
 #history{
   padding: 70px 20px;
