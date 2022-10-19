@@ -89,21 +89,34 @@ label{
   font-weight: bold;
 }
 
-input, select{
+input, select, button{
   padding: 5px;
   border: 2px solid rgba(34, 49, 52);
   border-radius: 4px;
 }
 
-input[type=button]{
+button, input[type=button]{
   font-weight: bold;
   color: white;
   background-color: rgb(34, 49, 52);
 }
 
-input[type=button]:hover{
-  transition: all 0.5s;
+input[type=button]{
+  font-weight: bold;
+  color: white;
+  background-color: rgb(218, 31, 31);
+}
+
+button:hover{
+  transition: all 0.3s;
+  transform: scale(0.95);
   background-color: rgb(75, 86, 102);
+}
+
+input[type=button]:hover{
+  transition: all 0.3s;
+  transform: scale(0.95);
+  background-color: rgb(173, 15, 15);
 }
 
 h2 {
