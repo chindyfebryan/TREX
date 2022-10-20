@@ -34,7 +34,7 @@
                 <a class="nav-link" href="#about">About</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#history">History</a>
+                <a class="nav-link" href="#track">Track</a>
               </li>
             </ul>
           </div>
@@ -42,13 +42,14 @@
       </nav>
     </header>
     <main>
+      <div class="container text-center">
+        <h1>Lacak Pengeluaran Anda Dengan Mudah</h1>
+      </div>
       <section id="slider">
         <div id="carouselExampleDark" class="carousel slide" data-bs-ride="carousel">
           <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-label="Slide 1" aria-current="true"></button>
             <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2" class=""></button>
-            <!-- <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3" class=""></button>
-            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3" aria-label="Slide 4" class=""></button> -->
           </div>
           <div class="carousel-inner">
             <div class="carousel-item active position-relative" data-bs-interval="5000">
@@ -60,25 +61,11 @@
             </div>
             <div class="carousel-item position-relative" data-bs-interval="5000">
               <img class="img-fluid" src="img/slide-2.jpg" alt="Backrooms" class="img-responsive">
-              <div class="carousel-caption">
+              <div class="carousel-caption position-absolute w-100 start-0">
                 <h5>Lorem Ipsum</h5>
                 <p>Lorom ipsum dolor sit amet</p>
               </div>
             </div>
-            <!-- <div class="carousel-item" data-bs-interval="5000">
-              <img src="img\slide3.jpg" alt="Arid Ruins" class="img-responsive">
-              <div class="carousel-caption">
-                <h5>Arid Ruins</h5>
-                <p>TAn abandoned archaeology site in the middle of desert.</p>
-              </div>
-            </div>
-            <div class="carousel-item" data-bs-interval="5000">
-              <img src="img\slide4.jpg" alt="Pool Rooms" class="img-responsive">
-              <div class="carousel-caption">
-                <h5>Pool Rooms</h5>
-                <p>An endless expanse of water and tiles.</p>
-              </div>
-            </div> -->
           </div>
           <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -93,11 +80,10 @@
       <section id="track">
         <div class="top-wrapper">
           <div class="container">
-            <h1>Lacak Pengeluaran Anda Dengan Mudah</h1>
             <form>
                 <p>Tambahkan pengeluaran baru</p>
                 <label for="date">Tanggal:</label><br>
-                <input type="date" id="date" required/><br><br>
+                <input type="date" id="date"/><br><br>
                 <label for="category">Kategori:</label><br>
                 <select id="category">
                   <option value="food">Food</option>
@@ -107,10 +93,8 @@
                   <option value="other">Other</option>
                 </select><br><br>
                 <label for="amount">Jumlah (Rp):</label><br>
-                <input type="number" id="amount" placeholder="50000" required/><br><br>
-                <!-- <input type="button" id="add" value="Tambahkan" onclick="addExpense()"> -->
+                <input type="number" id="amount" placeholder="50000"/><br><br>
                 <button id="btn" type="submit">Tambahkan</button>
-                
               </form>                
             </div>
           </div>	    

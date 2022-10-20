@@ -69,54 +69,9 @@ document.addEventListener('DOMContentLoaded', ()=>{
 // mengecek apakah data sudah terupdate atau belum
 function checkData() {
   //for display purposes only
-  // console.warn('added' , {expenses} );
-  let pre = document.querySelector('#msg pre');
-  pre.textContent = '\n' + JSON.stringify(expenses, '\t', 2);
+  // let pre = document.querySelector('#msg pre');
+  // pre.textContent = '\n' + JSON.stringify(expenses, '\t', 2);
 
   //saving to localStorage
   localStorage.setItem('MyexpenseList', JSON.stringify(expenses) );
-
-  //chart
-  const ctx = document.getElementById('myChart').getContext('2d');
-  
-  const myChart = new Chart(ctx, {
-    type: 'bar',
-    data: {
-        labels: Object.keys(expenses[id].amount),
-        datasets: [{
-            label: 'Number of GitHub Stars',
-            data: Object.values(expenses[id].amount),
-        }, ],
-    },
-    options: {
-        backgroundColor: [
-            'rgba(255, 99, 132, 0.2)',  // Bar 1
-            'rgba(54, 162, 235, 0.2)',  // Bar 2
-            'rgba(255, 206, 86, 0.2)',  // Bar 3
-            'rgba(75, 192, 192, 0.2)',  // Bar 4
-            'rgba(153, 102, 255, 0.2)', // Bar 5
-            'rgba(255, 159, 64, 0.2)'   // Bar 6
-        ],
-        borderWidth: 2,
-        borderColor: 'black'
-    }
-});
-
-  var series = JSC.nest()
-    // Group by day
-    .key({ key: "date", pattern: "day" })
-    // Count data entries for each day grouping
-    .rollup(function(v) {
-      return v.length;
-    })
-    .series(expenses);
-  
-  var chart = JSC.chart("chartDiv", {
-    legend_visible: false,
-    toolbar_items_export_visible: false,
-    title_label_text: "Count data rows by day",
-    xAxis_label_text: "Date",
-    yAxis_label_text: "Hits",
-    series: series
-  });
 }
