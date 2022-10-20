@@ -26,16 +26,6 @@ header {
   width: 45px;
 }
 
-.textlogo {
-  width: 90px;
-  padding-bottom: -20px ;
-}
-
-/* .container-fluid {
-  padding: 0 15px;
-  margin: 0 auto;
-} */
-
 .navbar {
   background-color: rgba(34, 49, 52, 0.9);
 	position: fixed;
@@ -72,8 +62,12 @@ header {
   justify-content: flex-end;
 }
 
+#title{
+  padding-top: 7%;
+}
+
 #slider{
-  padding: 7% 10% 4% 10% ;
+  padding: 0 5% 4% 5% ;
 }
 
 .carousel-caption{
