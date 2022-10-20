@@ -6,9 +6,11 @@ function addRow(ev) {
   var amount = document.getElementById("amount").value;
   var table = document.getElementById("tableData");
 
+  //untuk menambah baris baru
   var rowCount = table.rows.length;
   var row = table.insertRow(rowCount);
 
+  //untuk menambah isi baris baru
   row.insertCell(0).innerHTML= date;
   row.insertCell(1).innerHTML= category;
   row.insertCell(2).innerHTML= amount;
@@ -17,7 +19,10 @@ function addRow(ev) {
 
   //menghitung total pengeluaran yang ada dalam tabel
   var totalValue = document.getElementById("total-value").innerHTML;
+
+  //jika amount bukan integer maka amount=0
   var amountInt = isNaN(parseInt(amount)) ? 0 : (parseInt(amount));
+  //menambah total yang sudah ada dengan amount baru
   var sums = parseInt(totalValue) + parseInt(amountInt);
   document.getElementById("total-value").innerHTML = sums;
   id++;
@@ -31,7 +36,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
 function deleteRow(obj) {
   //menentukan index baris tabel
   var index = obj.parentNode.parentNode.rowIndex-1;
-  //menghapus data dari array
+  //menghapus data yang dihapus di array
   expenses.splice(index, 1);
 
   var nilai = parseInt(obj.parentNode.parentNode.childNodes[2].innerHTML);
@@ -56,6 +61,7 @@ const addExpense = (ev)=>{
     category : document.getElementById("category").value,
     amount : document.getElementById("amount").value
   }
+  //tambahkan objects expense ke array expenses
   expenses.push(expense);
   document.forms[0].reset(); // to clear the form for the next entries
   document.querySelector('form').reset();
@@ -74,4 +80,5 @@ function checkData() {
 
   //saving to localStorage
   localStorage.setItem('MyexpenseList', JSON.stringify(expenses) );
+
 }
