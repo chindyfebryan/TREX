@@ -14,7 +14,7 @@
 	</head>
   <body>
     <header>
-      <nav class="navbar navbar-expand-md navbar-dark">
+      <nav class="navbar navbar-expand-md navbar-dark sticky-top">
         <div class="container-fluid">
           <div class="container-logo">
             <a href="#home">
@@ -43,7 +43,52 @@
     </header>
     <main>
       <section id="slider">
-        
+        <div id="carouselExampleDark" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-label="Slide 1" aria-current="true"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2" class=""></button>
+            <!-- <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3" class=""></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3" aria-label="Slide 4" class=""></button> -->
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active position-relative" data-bs-interval="5000">
+              <img class="img-fluid" src="img/slide-1.jpg" alt="Seraph Research" class="img-responsive">
+              <div class="carousel-caption position-absolute w-100 start-0">
+                <h5>Lorem Ipsum</h5>
+                <p>Lorom ipsum dolor sit amet</p>
+              </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="5000">
+              <img class="img-fluid" src="img/slide-2.jpg" alt="Backrooms" class="img-responsive">
+              <div class="carousel-caption">
+                <h5>Lorem Ipsum</h5>
+                <p>Lorom ipsum dolor sit amet</p>
+              </div>
+            </div>
+            <!-- <div class="carousel-item" data-bs-interval="5000">
+              <img src="img\slide3.jpg" alt="Arid Ruins" class="img-responsive">
+              <div class="carousel-caption">
+                <h5>Arid Ruins</h5>
+                <p>TAn abandoned archaeology site in the middle of desert.</p>
+              </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="5000">
+              <img src="img\slide4.jpg" alt="Pool Rooms" class="img-responsive">
+              <div class="carousel-caption">
+                <h5>Pool Rooms</h5>
+                <p>An endless expanse of water and tiles.</p>
+              </div>
+            </div> -->
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
       </section>
       <section id="track">
         <div class="top-wrapper">
@@ -74,7 +119,7 @@
           <div align="center">
             <h2>Riwayat Pengeluaran</h2>
             <div class="table-responsive">
-              <table class="table table-sm table-bordered" cellpadding="5">
+              <table class="table table-sm table-bordered">
                 <thead>
                   <tr>
                     <th scope="col"><b>Tanggal</b></th>
@@ -82,7 +127,6 @@
                     <th scope="col"><b>Pengeluaran</b></th>
                     <th scope="col"><b>Delete</b></th>
                   </tr>
-                </tr> 
                 </thead>
                 <tbody id="tableData" >
     
@@ -98,12 +142,9 @@
           <div id="msg">
             <pre></pre>
           </div>
-          <canvas id="myChart" width="1000" height="600"></canvas>
           <div id="chartDiv" style="max-width: 740px;height: 250px;margin: 0px auto;">
           </div>
-          <div class="chart">
-            <canvas id="myChart"></canvas>
-          </div>
+          <canvas id="myChart"></canvas>
           <!--       <script>
                   const data = {
                       labels: [

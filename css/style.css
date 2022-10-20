@@ -19,6 +19,7 @@ header {
   background-color: rgba(34, 49, 52, 0.9);
   position: fixed;
   top: 0;
+  z-index: 1000;
 }
 
 .logo {
@@ -71,12 +72,20 @@ header {
   justify-content: flex-end;
 }
 
+#slider{
+  padding: 70px 100px 40px 100px ;
+}
+
+.carousel-caption{
+  background-color: rgba(0, 0, 0, 0.479);
+}
+
 .top-wrapper {
-  padding: 180px 0 100px 0;
-  background-image: url(https://img.freepik.com/free-vector/money-pattern-background-wallpaper-vector-finance-illustration_53876-140179.jpg);
-  background-size: cover;
-  background-color: rgba(236, 236, 185, 0.178);
-  background-blend-mode: soft-light;
+  padding: 100px 0;
+  /* background-image: url(https://img.freepik.com/free-vector/money-pattern-background-wallpaper-vector-finance-illustration_53876-140179.jpg); */
+  /* background-size: cover; */
+  background-color: rgb(255, 252, 234);
+  /* background-blend-mode: soft-light; */
   color: black;
   text-align: center;
 }
@@ -117,6 +126,11 @@ input[type=button]:hover{
   transition: all 0.3s;
   transform: scale(0.95);
   background-color: rgb(173, 15, 15);
+}
+
+#slider button, #slider button:hover{
+  background-color: transparent;
+  color: black;
 }
 
 h2 {
