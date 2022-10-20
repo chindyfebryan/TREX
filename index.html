@@ -42,101 +42,113 @@
       </nav>
     </header>
     <main>
-      <div class="top-wrapper">
+      <section id="slider">
+        
+      </section>
+      <section id="track">
+        <div class="top-wrapper">
+          <div class="container">
+            <h1>Lacak Pengeluaran Anda Dengan Mudah</h1>
+            <form>
+                <p>Tambahkan pengeluaran baru</p>
+                <label for="date">Tanggal:</label><br>
+                <input type="date" id="date" required/><br><br>
+                <label for="category">Kategori:</label><br>
+                <select id="category">
+                  <option value="food">Food</option>
+                  <option value="home">Home</option>
+                  <option value="transport">Transport</option>
+                  <option value="urgent">Urgent</option>
+                  <option value="other">Other</option>
+                </select><br><br>
+                <label for="amount">Jumlah (Rp):</label><br>
+                <input type="number" id="amount" placeholder="50000" required/><br><br>
+                <!-- <input type="button" id="add" value="Tambahkan" onclick="addExpense()"> -->
+                <button id="btn" type="submit">Tambahkan</button>
+                
+              </form>                
+            </div>
+          </div>	    
+        </section>
+        <section id="history">
+          <div align="center">
+            <h2>Riwayat Pengeluaran</h2>
+            <div class="table-responsive">
+              <table class="table table-sm table-bordered" cellpadding="5">
+                <thead>
+                  <tr>
+                    <th scope="col"><b>Tanggal</b></th>
+                    <th scope="col"><b>Kategori</b></th>
+                    <th scope="col"><b>Pengeluaran</b></th>
+                    <th scope="col"><b>Delete</b></th>
+                  </tr>
+                </tr> 
+                </thead>
+                <tbody id="tableData" >
+    
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div id="total">
+            <p>Total : <span id="total-value">0</span></p>
+          </div>
+        </section>
+        <section id="chart">
+          <div id="msg">
+            <pre></pre>
+          </div>
+          <canvas id="myChart" width="1000" height="600"></canvas>
+          <div id="chartDiv" style="max-width: 740px;height: 250px;margin: 0px auto;">
+          </div>
+          <div class="chart">
+            <canvas id="myChart"></canvas>
+          </div>
+          <!--       <script>
+                  const data = {
+                      labels: [
+                          'Food',
+                          'Home',
+                          'Transport',
+                          'Urgent',
+                          'Other'
+                      ],
+                      datasets: [{
+                          label: 'My First Dataset',
+                          data: [300, 50, 100, 10, 20],
+                          backgroundColor: [
+                          'rgb(169, 0, 0)',
+                          'rgb(169, 190, 0)',
+                          'rgb(41, 136, 231)',
+                          'rgb(105, 67, 11)',
+                          'rgb(255, 188, 11)'
+                          ],
+                          hoverOffset: 4,
+                      }]
+                      };
+          
+                      const config = {
+                      type: 'doughnut',
+                      data: data,
+                      options: {}
+                      };
+                      const myChart = new Chart(
+                      document.getElementById('myChart'),
+                      config
+                      );
+                </script> -->
+      </section>
+      <section id="about">
         <div class="container">
-          <h1>Lacak Pengeluaran Anda Dengan Mudah</h1>
-          <form>
-              <p>Tambahkan pengeluaran baru</p>
-              <label for="date">Tanggal:</label><br>
-              <input type="date" id="date" required/><br><br>
-              <label for="category">Kategori:</label><br>
-              <select id="category">
-                <option value="food">Food</option>
-                <option value="home">Home</option>
-                <option value="transport">Transport</option>
-                <option value="urgent">Urgent</option>
-                <option value="other">Other</option>
-              </select><br><br>
-              <label for="amount">Jumlah (Rp):</label><br>
-              <input type="number" id="amount" placeholder="50000" required/><br><br>
-              <!-- <input type="button" id="add" value="Tambahkan" onclick="addExpense()"> -->
-              <button id="btn" type="submit">Tambahkan</button>
-              
-            </form>                
-          </div>
-        </div>	  
-        <div align="center" id="history">
-          <h2>Riwayat Pengeluaran</h2>
-          <div class="table-responsive">
-            <table class="table table-sm table-bordered" cellpadding="5">
-              <thead>
-                <tr>
-                  <th scope="col"><b>Tanggal</b></th>
-                  <th scope="col"><b>Kategori</b></th>
-                  <th scope="col"><b>Pengeluaran</b></th>
-                  <th scope="col"><b>Delete</b></th>
-                </tr>
-              </tr>
-              </thead>
-              <tbody id="tableData" >
-  
-              </tbody>
-            </table>
-          </div>
+          <h2>About</h2> 
+          <p> Masyarakat sekarang lebih banyak menghabiskan uang dengan membeli hal-hal random, baik secara online atau pun offline. Terkadang juga sering bertanya-tanya
+            dimana mereka menghabiskan uang mereka. Dengan aplikasi web ini, pengguna dapat mengatur keuangannya. <b>TREX</b> atau TRack EXpenses adalah sebuah aplikasi web 
+            sederhana untuk menghitung pengeluaran sehari-hari. TREX dirancang sebagai ajang coba-coba dalam membuat suatu aplikasi web. Dalam merancang TREX, kami menemukan 
+            hal-hal baru untuk dipahami lebih dalam dan dipelajari lebih lanjut. Aplikasi web ini dirancang untuk mendata pengeluaran dari pengguna. Aplikasi web ini sangat mudah digunakan. 
+            TREX memiliki fitur untuk menambahkan dan menghapus data pengeluaran. TREX juga masih dalam tahap pengembangan agar dapat lebih menarik dan lebih efisien untuk digunakan.
+          </p>
         </div>
-      <div id="total">
-	      <p>Total : <span id="total-value">0</span></p>
-      </div>
-	<div class="chart">
-        <canvas id="myChart"></canvas>
-      </div>
-<!--       <script>
-        const data = {
-            labels: [
-                'Food',
-                'Home',
-                'Transport',
-                'Urgent',
-                'Other'
-            ],
-            datasets: [{
-                label: 'My First Dataset',
-                data: [300, 50, 100, 10, 20],
-                backgroundColor: [
-                'rgb(169, 0, 0)',
-                'rgb(169, 190, 0)',
-                'rgb(41, 136, 231)',
-                'rgb(105, 67, 11)',
-                'rgb(255, 188, 11)'
-                ],
-                hoverOffset: 4,
-            }]
-            };
-
-            const config = {
-            type: 'doughnut',
-            data: data,
-            options: {}
-            };
-            const myChart = new Chart(
-            document.getElementById('myChart'),
-            config
-            );
-      </script> -->
-      <div id="msg">
-        <pre></pre>
-      </div>
-      <div id="chartDiv" style="max-width: 740px;height: 250px;margin: 0px auto;">
-      </div>
-      <div id="about">
-        <h2>About</h1> 
-        <p> Masyarakat sekarang lebih banyak menghabiskan uang dengan membeli hal-hal random, baik secara online atau pun offline. Terkadang juga sering bertanya-tanya
-          dimana mereka menghabiskan uang mereka. Dengan aplikasi web ini, pengguna dapat mengatur keuangannya. <b>TREX</b> atau TRack EXpenses adalah sebuah aplikasi web 
-          sederhana untuk menghitung pengeluaran sehari-hari. TREX dirancang sebagai ajang coba-coba dalam membuat suatu aplikasi web. Dalam merancang TREX, kami menemukan 
-          hal-hal baru untuk dipahami lebih dalam dan dipelajari lebih lanjut. Aplikasi web ini dirancang untuk mendata pengeluaran dari pengguna. Aplikasi web ini sangat mudah digunakan. 
-          TREX memiliki fitur untuk menambahkan dan menghapus data pengeluaran. TREX juga masih dalam tahap pengembangan agar dapat lebih menarik dan lebih efisien untuk digunakan.
-        </p>
-      </div>
+      </section>
     </main>        
     <footer>
       <p>Michiko, Chindy, Wirya, Stefany &#169; 2022</p>
