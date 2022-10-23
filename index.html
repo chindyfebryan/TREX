@@ -27,10 +27,13 @@
                 <a class="nav-link" href="#home">Home</a>
               </li>
               <li class="nav-item">
+                <a class="nav-link" href="#track">Track</a>
+              </li>
+              <li class="nav-item">
                 <a class="nav-link" href="#about">About</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#track">Track</a>
+                <a class="nav-link" href="login.html">Login</a>
               </li>
             </ul>
           </div>
@@ -38,11 +41,11 @@
       </nav>
     </header>
     <main>
-      <div class="container text-center" id="title">
+      <div class="container-fluid text-center" id="title">
         <h1><b>Lacak Pengeluaran Anda Dengan Mudah</b></h1>
       </div>
       <section id="slider">
-        <div id="carouselExampleDark" class="carousel slide" data-bs-ride="carousel">
+        <div id="carouselExampleDark" class="container carousel slide" data-bs-ride="carousel">
           <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-label="Slide 1" aria-current="true"></button>
             <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2" class=""></button>
@@ -51,8 +54,11 @@
             <div class="carousel-item active position-relative" data-bs-interval="5000">
               <img class="img-fluid" src="img/slide-1.jpg" alt="Seraph Research" class="img-responsive">
               <div class="carousel-caption position-absolute w-100 start-0">
-		          <h5> <b>TREX</b> </h5>
+		            <h5> <b>TREX</b> </h5>
                 <p>TRack your EXpenses</p>
+                <div class="slider-btn">
+                  <button class="btn btn-1"><a href="#track">Get Started</a></button>
+                </div>
               </div>
             </div>
             <div class="carousel-item position-relative" data-bs-interval="5000">
@@ -74,8 +80,7 @@
         </div>
       </section>
       <section id="track">
-        <div class="top-wrapper">
-          <div class="container">
+          <div class="container-fluid text-center">
             <form>
                 <h2>Tambahkan pengeluaran baru</h2>
                 <label for="date">Tanggal:</label><br>
@@ -90,15 +95,17 @@
                 </select><br><br>
                 <label for="amount">Jumlah (Rp):</label><br>
                 <input type="number" id="amount" placeholder="50000"/><br><br>
-                <button id="btn" type="submit">Tambahkan</button>
+                <button id="btn-add" type="submit">Tambahkan</button>
               </form>                
-            </div>
           </div>	    
         </section>
+        <div id="msg">
+          <pre></pre>
+        </div>
         <section id="history">
           <div align="center">
             <h2>Riwayat Pengeluaran</h2>
-            <div class="table-responsive">
+            <div class="container table-responsive text-center">
               <table class="table table-sm table-bordered">
                 <thead>
                   <tr>
@@ -119,7 +126,7 @@
           </div>
         </section>
       <section id="about">
-        <div class="container">
+        <div class="container-fluid text-center">
           <h2>About</h2> 
           <p> Masyarakat sekarang lebih banyak menghabiskan uang dengan membeli hal-hal random, baik secara online atau pun offline. Terkadang juga sering bertanya-tanya
             dimana mereka menghabiskan uang mereka. Dengan aplikasi web ini, pengguna dapat mengatur keuangannya. <b>TREX</b> atau TRack EXpenses adalah sebuah aplikasi web 

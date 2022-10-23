@@ -1,36 +1,47 @@
-// menambahkan data baru ke tabel dari input user
-function addRow(ev) {
-  ev.preventDefault();    
-  var date = document.getElementById("date").value;
-  var category = document.getElementById("category").value;
-  var amount = document.getElementById("amount").value;
-  var table = document.getElementById("tableData");
+const date = document.getElementById("date");
+const category = document.getElementById("category");
+const amount = document.getElementById("amount");
+const table = document.getElementById("tableData");
+const btnAdd = document.getElementById('btn-add');
+const totalValue = document.getElementById("total-value");
+const pre = document.querySelector('#msg pre');
+const history = document.querySelector('#history');
+let rowCount = table.rows.length;
+history.style.display = "none";
+//memanggil fungsi addRow dan addExpense jika button "tambahkan" diklik
+btnAdd.addEventListener('click', (ev)=>{
+  ev.preventDefault(); //to stop the form submitting
+  if(date.value == ""){
+    alert("Fill the date!");
+  } else if(amount.value == "") {
+    alert("Fill your amount!")
+  }
+    else {
+    history.style.display = "block";
+    addRow();
+    addExpense();
+  }
+});
 
+// menambahkan data baru ke tabel dari input user
+function addRow() { 
   //untuk menambah baris baru
-  var rowCount = table.rows.length;
   var row = table.insertRow(rowCount);
 
   //untuk menambah isi baris baru
-  row.insertCell(0).innerHTML= date;
-  row.insertCell(1).innerHTML= category;
-  row.insertCell(2).innerHTML= amount;
+  row.insertCell(0).innerHTML= date.value;
+  row.insertCell(1).innerHTML= category.value;
+  row.insertCell(2).innerHTML= amount.value;
   //memberi button "hapus" pada baris baru
   row.insertCell(3).innerHTML= '<input type="button" value = "Hapus" onClick="deleteRow(this)">';
 
   //menghitung total pengeluaran yang ada dalam tabel
-  var totalValue = document.getElementById("total-value").innerHTML;
-
-  //jika amount bukan integer maka amount=0
-  var amountInt = isNaN(parseInt(amount)) ? 0 : (parseInt(amount));
+  //jika amount bukan integer maka amount = 0
+  var amountInt = isNaN(parseInt(amount.value)) ? 0 : (parseInt(amount.value));
   //menambah total yang sudah ada dengan amount baru
-  var sums = parseInt(totalValue) + parseInt(amountInt);
-  document.getElementById("total-value").innerHTML = sums;
-  id++;
+  var sums = parseInt(totalValue.innerHTML) + parseInt(amountInt);
+  totalValue.innerHTML = sums;
 }
-//memanggil fungsi addRow jika button "tambahkan" diklik
-document.addEventListener('DOMContentLoaded', ()=>{
-  document.getElementById('btn').addEventListener('click', addRow);
-});
 
 //menghapus data pada baris yang dipilih user
 function deleteRow(obj) {
@@ -41,25 +52,27 @@ function deleteRow(obj) {
 
   var nilai = parseInt(obj.parentNode.parentNode.childNodes[2].innerHTML);
   var nilaiInt = isNaN(parseInt(nilai)) ? 0 : (parseInt(nilai));
-  var total = parseInt(document.getElementById("total-value").innerHTML);
-  var table = document.getElementById("tableData");
+  var total = parseInt(totalValue.innerHTML);
   //mengurangi total pengeluaran
-  document.getElementById("total-value").innerHTML = total - nilaiInt;
+  totalValue.innerHTML = total - nilaiInt;
   //menghapus baris
   table.deleteRow(index);
+  if(rowCount == 0){
+    history.style.display = "none";
+  }
   checkData();
 }
 
 let expenses = [];
 let id = 0;
 //menambahkan data dari inputan user ke array yang berisi objects
-const addExpense = (ev)=>{
-  ev.preventDefault();  //to stop the form submitting
+const addExpense = ()=>{
+  id++;
   let expense = {
     id: id,
-    date : document.getElementById("date").value,
-    category : document.getElementById("category").value,
-    amount : document.getElementById("amount").value
+    date : date.value,
+    category : category.value,
+    amount : amount.value
   }
   //tambahkan objects expense ke array expenses
   expenses.push(expense);
@@ -67,18 +80,12 @@ const addExpense = (ev)=>{
   document.querySelector('form').reset();
   checkData();
 }
-//memanggil fungsi addExpense jika button "tambahkan" diklik
-document.addEventListener('DOMContentLoaded', ()=>{
-  document.getElementById('btn').addEventListener('click', addExpense);
-});
 
 // mengecek apakah data sudah terupdate atau belum
 function checkData() {
   //for display purposes only
-  // let pre = document.querySelector('#msg pre');
-  // pre.textContent = '\n' + JSON.stringify(expenses, '\t', 2);
+  pre.textContent = '\n' + JSON.stringify(expenses, '\t', 2);
 
   //saving to localStorage
   localStorage.setItem('MyexpenseList', JSON.stringify(expenses) );
-
 }
