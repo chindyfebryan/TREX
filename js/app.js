@@ -6,7 +6,6 @@ const btnAdd = document.getElementById('btn-add');
 const totalValue = document.getElementById("total-value");
 const pre = document.querySelector('#msg pre');
 const history = document.querySelector('#history');
-let rowCount = table.rows.length;
 
 history.style.display = "none";
 //memanggil fungsi addRow dan addExpense jika button "tambahkan" diklik
@@ -17,7 +16,7 @@ btnAdd.addEventListener('click', (ev)=>{
   } else if(amount.value == "") {
     alert("Fill your amount!")
   }
-    else {
+  else {
     history.style.display = "block";
     addRow();
     addExpense();
@@ -27,8 +26,9 @@ btnAdd.addEventListener('click', (ev)=>{
 // menambahkan data baru ke tabel dari input user
 function addRow() { 
   //untuk menambah baris baru
-  var row = table.insertRow(rowCount);
-
+  let rowCount = table.rows.length;
+  let row = table.insertRow(rowCount);
+  alert(rowCount);
   //untuk menambah isi baris baru
   row.insertCell(0).innerHTML= date.value;
   row.insertCell(1).innerHTML= category.value;
@@ -59,11 +59,11 @@ function deleteRow(obj) {
   totalValue.innerHTML = total - nilaiInt;
   //menghapus baris
   table.deleteRow(index);
-  if(rowCount == 0){
-    history.style.display = "none";
-  }
   checkData();
   filterTable();
+  if(table.rows.length==0){
+    history.style.display = "none";
+  }
 }
 
 let expenses = [];
@@ -101,6 +101,7 @@ let flag = false;
 let msgFilter = document.querySelector("#history pre");
 //memfilter isi tabel
 function filterTable() {
+  msgFilter.style.display = "none";
   let filter = inputFilter.value.toUpperCase();
   for (let row of rows) {
     let cells = row.getElementsByTagName("TD");
@@ -117,15 +118,17 @@ function filterTable() {
         cell.style.backgroundColor = '';
       }
     }
-    
+
+    if(table.textContent.toUpperCase().indexOf(filter) == -1){
+      msgFilter.style.display = "block";
+      msgFilter.innerHTML= "Tidak ada data yang ditemukan";
+
+    }
     //menyembunyikan baris yang tidak termasuk filter
     if (flag) {
       row.style.display = "";
-      msgFilter.style.display = "none";
     } else {
       row.style.display = "none";
-      msgFilter.style.display = "block";
-      msgFilter.innerHTML = "Tidak ada data yang ditemukan";
     }
     
     flag = false;
