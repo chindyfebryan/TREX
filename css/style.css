@@ -178,6 +178,10 @@ footer {
   background-color: rgb(255, 255, 255);
 }
 
+#username {
+	margin-bottom: 30px;
+}
+
 @media screen and (max-width: 780px) {
   #about p {
     font-size: 15px;
