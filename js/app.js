@@ -28,7 +28,7 @@ function addRow() {
   //untuk menambah baris baru
   let rowCount = table.rows.length;
   let row = table.insertRow(rowCount);
-  alert(rowCount);
+  
   //untuk menambah isi baris baru
   row.insertCell(0).innerHTML= date.value;
   row.insertCell(1).innerHTML= category.value;
@@ -94,8 +94,8 @@ function checkData() {
 }
 
 let inputFilter = document.getElementById('input-filter');
-let caretUpClassName = 'fa fa-caret-up';
-let caretDownClassName = 'fa fa-caret-down';
+// let caretUpClassName = 'fa fa-caret-up';
+// let caretDownClassName = 'fa fa-caret-down';
 let rows = table.getElementsByTagName("TR");
 let flag = false;
 let msgFilter = document.querySelector("#history pre");
@@ -118,11 +118,10 @@ function filterTable() {
         cell.style.backgroundColor = '';
       }
     }
-
+    //menampikan message untuk hasil yang tidak ada
     if(table.textContent.toUpperCase().indexOf(filter) == -1){
       msgFilter.style.display = "block";
       msgFilter.innerHTML= "Tidak ada data yang ditemukan";
-
     }
     //menyembunyikan baris yang tidak termasuk filter
     if (flag) {
@@ -134,5 +133,5 @@ function filterTable() {
     flag = false;
   }
 }
-
+//memanggil fungsi filterTable saat inputan dimasukkan
 inputFilter.addEventListener('keyup', filterTable);
