@@ -105,14 +105,18 @@
         <section id="history">
           <div align="center">
             <h2>Riwayat Pengeluaran</h2>
+            <p>Key in your input to filter the table:</p>
+            <input type="text" id="input-filter" placeholder="Search..." title="Type in something"><br><br>
+            <pre></pre>
+            <!-- <p>Click on the header of a column to sort the table:</p> -->
             <div class="container table-responsive text-center">
               <table class="table table-sm table-bordered">
                 <thead>
                   <tr>
-                    <th scope="col"><b>Tanggal</b></th>
-                    <th scope="col"><b>Kategori</b></th>
-                    <th scope="col"><b>Pengeluaran</b></th>
-                    <th scope="col"><b>Delete</b></th>
+                    <th scope="col"><span class="col"><b>Tanggal</b><i class="caret"></i></th>
+                    <th scope="col"><span class="col"><b>Kategori</b><i class="caret"></i></th>
+                    <th scope="col"><span class="col"><b><b>Pengeluaran</b></b><i class="caret"></i></th></th>
+                    <th scope="col"><span class="col"></span> <b>Delete</b></th>
                   </tr>
                 </thead>
                 <tbody id="tableData" >

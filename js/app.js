@@ -7,6 +7,7 @@ const totalValue = document.getElementById("total-value");
 const pre = document.querySelector('#msg pre');
 const history = document.querySelector('#history');
 let rowCount = table.rows.length;
+
 history.style.display = "none";
 //memanggil fungsi addRow dan addExpense jika button "tambahkan" diklik
 btnAdd.addEventListener('click', (ev)=>{
@@ -41,6 +42,7 @@ function addRow() {
   //menambah total yang sudah ada dengan amount baru
   var sums = parseInt(totalValue.innerHTML) + parseInt(amountInt);
   totalValue.innerHTML = sums;
+  filterTable();
 }
 
 //menghapus data pada baris yang dipilih user
@@ -61,6 +63,7 @@ function deleteRow(obj) {
     history.style.display = "none";
   }
   checkData();
+  filterTable();
 }
 
 let expenses = [];
@@ -84,8 +87,49 @@ const addExpense = ()=>{
 // mengecek apakah data sudah terupdate atau belum
 function checkData() {
   //for display purposes only
-  pre.textContent = '\n' + JSON.stringify(expenses, '\t', 2);
+  // pre.textContent = '\n' + JSON.stringify(expenses, '\t', 2);
 
   //saving to localStorage
   localStorage.setItem('MyexpenseList', JSON.stringify(expenses) );
 }
+
+let inputFilter = document.getElementById('input-filter');
+let caretUpClassName = 'fa fa-caret-up';
+let caretDownClassName = 'fa fa-caret-down';
+let rows = table.getElementsByTagName("TR");
+let flag = false;
+let msgFilter = document.querySelector("#history pre");
+//memfilter isi tabel
+function filterTable() {
+  let filter = inputFilter.value.toUpperCase();
+  for (let row of rows) {
+    let cells = row.getElementsByTagName("TD");
+    for (let cell of cells) {
+      //mencari inputan dalam tiap cell
+      if (cell.textContent.toUpperCase().indexOf(filter) > -1) {
+        if (filter) {
+          cell.style.backgroundColor = 'rgb(220, 220, 187)';
+        } else {
+          cell.style.backgroundColor = '';
+        }
+        flag = true;
+      } else {
+        cell.style.backgroundColor = '';
+      }
+    }
+    
+    //menyembunyikan baris yang tidak termasuk filter
+    if (flag) {
+      row.style.display = "";
+      msgFilter.style.display = "none";
+    } else {
+      row.style.display = "none";
+      msgFilter.style.display = "block";
+      msgFilter.innerHTML = "Tidak ada data yang ditemukan";
+    }
+    
+    flag = false;
+  }
+}
+
+inputFilter.addEventListener('keyup', filterTable);
