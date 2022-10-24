@@ -126,8 +126,6 @@ input[type=button]:hover{
   background-color: transparent;
 }
 
-#slider
-
 h2 {
   font-weight: bold;
   font-size: 2em;
@@ -157,7 +155,7 @@ table tbody tr:hover{
 
 #total {
 	text-align: center;
-  font-size: 20px;
+	font-size: 20px;
 }
 
 #about p{
@@ -168,7 +166,7 @@ table tbody tr:hover{
 footer {
 	padding: 10px;
 	color: white;
-  background-color: rgba(36, 76, 60);
+	background-color: rgba(36, 76, 60);
 	font-weight: bold;
 }
 
