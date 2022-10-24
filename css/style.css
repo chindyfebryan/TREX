@@ -131,7 +131,8 @@ input[type=button]:hover{
 h2 {
   font-weight: bold;
   font-size: 2em;
-  padding-bottom: 20px;    
+  padding-bottom: 20px;
+  color : rgba(36, 76, 60, 0.9);    
 }
 
 #history{
