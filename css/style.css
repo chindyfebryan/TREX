@@ -94,7 +94,7 @@ input{
 
 input, select, button{
   padding: 5px;
-  border: 2px solid rgba(36, 76, 60, 0.9);
+  border: 2px solid rgba(36, 76, 60);
   border-radius: 4px;
 }
 
@@ -144,7 +144,7 @@ table{
 }
 
 table thead{
-  background-color: rgb(34, 49, 52);
+  background-color: rgba(36, 76, 60);
   color: white;
 }
 
@@ -166,7 +166,7 @@ table tbody tr:hover{
 footer {
 	padding: 10px;
 	color: white;
-  background-color: rgba(36, 76, 60, 0.9);
+  background-color: rgba(36, 76, 60);
 	font-weight: bold;
 }
 
